@@ -1,0 +1,30 @@
+file_path = r'C:\Users\dnfin\Documents\Data Science Bootcamp\Task 8\DOB.txt'
+
+# Open and read the data from DOB.txt
+with open(file_path, 'r') as file:
+    data = file.readlines()
+    
+# lists to hold names and birthdates 
+names = []
+birthdates = []
+
+# Process each line and separate names and birthdates
+for line in data:
+    # Split the line into words
+    words = line.strip().split()
+    # Name is all words except the last three
+    name = ' '.join(words[:-3])
+    # Birthdate is the last three words
+    dob = ' '.join(words[-3:])
+    names.append(name)
+    birthdates.append(dob)
+
+    # Print names
+print("Name")
+for name in names:
+    print(name)
+
+# Print a separator line
+print("\nBirthdate")
+for dob in birthdates:
+    print(dob)
